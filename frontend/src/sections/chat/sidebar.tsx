@@ -3,14 +3,17 @@ import { ChatIcon, SignOutIcon } from "@phosphor-icons/react";
 const Sidebar = () => {
   return (
     <div className="flex flex-col border-r p-2">
-      <div className="mx-auto border p-2 rounded-md">
+      {/* Header */}
+      <div className="mx-auto rounded-md border p-2">
         <ChatIcon size={24} />
       </div>
-      <div className="flex flex-col grow"></div>
-      <div className="flex">
-        <div className="mx-auto border p-2 rounded-md hover:bg-accent cursor-pointer">
-          <SignOutIcon size={24} />
-        </div>
+
+      {/* Spacer */}
+      <div className="flex-1" />
+
+      {/* Footer */}
+      <div className="mx-auto cursor-pointer rounded-md border p-2 transition-colors hover:bg-accent">
+        <SignOutIcon size={24} />
       </div>
     </div>
   );

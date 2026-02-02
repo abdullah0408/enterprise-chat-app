@@ -7,22 +7,26 @@ const avatars = Array.from({ length: 16 }, (_, i) => ({
 
 const ChatList = () => {
   return (
-    <div className="hidden h-full xl:flex xl:w-1/4 flex-col border-r">
-      <div className="border-b px-6 py-6 flex items-center shrink-0">
-        <h3 className="text-lg font-medium 2xl:text-xl">
-          Active Conversations
-        </h3>
-        <span className="mx-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-sm font-medium">
-          8
-        </span>
+    <div className="hidden h-full flex-col border-r xl:flex xl:w-1/4">
+      {/* Header */}
+      <div className="flex shrink-0 items-center justify-between border-b px-6 py-6">
+        <div className="flex h-10 items-center">
+          <h3 className="text-lg font-medium 2xl:text-xl">
+            Active Conversations
+          </h3>
+          <span className="mx-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-sm font-medium">
+            8
+          </span>
+        </div>
       </div>
 
-      <div className="p-5 shrink-0">
+      {/* Search */}
+      <div className="shrink-0 p-5">
         <div className="relative">
           <input
             type="text"
             placeholder="Search..."
-            className="w-full rounded border bg-accent py-2 pl-5 pr-10 text-sm outline-none focus:border-primary"
+            className="w-full rounded border bg-accent py-2 pl-5 pr-10 text-sm outline-none transition-colors focus:border-primary"
           />
           <button
             type="button"
@@ -33,12 +37,13 @@ const ChatList = () => {
         </div>
       </div>
 
-      <div className="flex-1 min-h-0 overflow-y-auto no-scrollbar px-2 pb-2">
+      {/* Chat List */}
+      <div className="flex-1 min-h-0 overflow-y-auto px-2 pb-2 no-scrollbar">
         <div className="flex flex-col gap-1">
           {avatars.map((avatar) => (
             <div
               key={avatar.id}
-              className="group flex cursor-pointer items-center gap-3 rounded px-3 py-2 hover:bg-accent transition-colors"
+              className="group flex cursor-pointer items-center gap-3 rounded px-3 py-2 transition-colors hover:bg-accent"
             >
               <div className="relative h-11 w-11 shrink-0">
                 <img
@@ -46,7 +51,7 @@ const ChatList = () => {
                   alt="User avatar"
                   className="h-full w-full rounded-full object-cover"
                 />
-                <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-600 ring-2 ring-background group-hover:ring-accent" />
+                <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-600 ring-2 ring-background transition-colors group-hover:ring-accent" />
               </div>
 
               <div className="min-w-0 flex-1">
